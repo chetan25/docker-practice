@@ -1,0 +1,13 @@
+# setting super user permissions
+sudo: required
+
+services: 
+  - docker
+
+before_install:
+  - docker build -t web-app -f Dockerfile.dev ./frontend-app
+
+scripts:
+  - docker run web-app npm run test -- --coverage
+  
+    
