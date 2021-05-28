@@ -1,0 +1,14 @@
+# docker compose version
+version: '3'
+
+#setup different services(container)
+services: 
+    redis-server:
+        # image to use
+        image: redis
+    node-app:
+        # to build from a docker file, '.' specify the root context
+        build: .
+        ports:
+            # this is to open container to local machine
+            - "8081:8081" 
